@@ -26,14 +26,38 @@ def test_max_on_both_borders():
     exp = [0,3,5]
     assert exp == out
 
-def test_max_on_global_right():
+def test_max_on_both_borders_global_maxima_right():
     inp = [4, 2, 1, 3, 1, 5]
     out = find_maxima(inp)
     exp = [0,3,5]
     assert exp == out
 
-def test_max_on_left_border():
+def test_max_on_lower_border():
     inp = [4, 2, 1, 3, 1]
+    out = find_maxima(inp)
+    exp = [0,3]
+    assert exp == out
+
+def test_max_with_plateau():
+    inp = [1, 2, 2, 1]
+    out = find_maxima(inp)
+    exp = [1,2]
+    assert exp == out
+
+def test_max_with_saddel():
+    inp = [1, 2, 2, 3, 1]
+    out = find_maxima(inp)
+    exp = [3]
+    assert exp == out
+
+def test_max_with_reverse_saddel():
+    inp = [1, 3, 2, 2, 1]
+    out = find_maxima(inp)
+    exp = [1]
+    assert exp == out
+
+def test_max_with_valley():
+    inp = [3, 2, 2, 3]
     out = find_maxima(inp)
     exp = [0,3]
     assert exp == out
