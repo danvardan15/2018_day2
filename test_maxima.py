@@ -32,6 +32,12 @@ def test_max_on_global_right():
     exp = [0,3,5]
     assert exp == out
 
+def test_max_on_left_border():
+    inp = [4, 2, 1, 3, 1]
+    out = find_maxima(inp)
+    exp = [0,3]
+    assert exp == out
+
 # additional tests for
 # - max on both borders
 #   x = [4, 2, 1, 3, 1, 2]
